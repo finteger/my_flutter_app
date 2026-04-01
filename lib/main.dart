@@ -27,8 +27,22 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: Text('Flutter App'),
-        backgroundColor: Colors.red
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+              FlutterLogo(size: 28),
+              Text('Flutter App'),
+              Icon(Icons.notification_add_rounded)
+          ],
+        ),
+        backgroundColor: Colors.red,
+        ),
+        body: Container(
+          height:500,
+          decoration: BoxDecoration(),
+        ),
+        bottomNavigationBar: BottomAppBar(
+          color: Colors.red,
         ),
     );
   }
