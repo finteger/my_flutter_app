@@ -39,7 +39,10 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: Container(
           height:500,
-          decoration: BoxDecoration(),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(23),
+            color: Colors.blue,
+           )
         ),
         bottomNavigationBar: BottomAppBar(
           color: Colors.red,
