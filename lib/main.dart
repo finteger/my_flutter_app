@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/utils/image_generator.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,15 +30,11 @@ class _HomePageState extends State<HomePage> {
         title: Row(children: [FlutterLogo(size: 45)]),
       ),
       drawer: Drawer(),
-      body: ListView(
-        scrollDirection: Axis.vertical,
-        children: <Widget>[
-          Image.asset('assets/photo1.jpg'),
-          Image.asset('assets/photo2.jpg'),
-          Image.asset('assets/photo3.jpg'),
-          Image.asset('assets/photo4.jpg'),
-          Image.asset('assets/photo5.jpg'),
-        ],
+      body: ListView.builder(
+        itemCount: imageCards.length,
+        itemBuilder: (context, index) {
+          return imageCards[index];
+        },
       ),
     );
   }
