@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
@@ -9,44 +9,36 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomeScreen(),
-    );
+    return MaterialApp(home: HomePage());
   }
 }
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-              FlutterLogo(size: 28),
-              Text('Flutter App'),
-              Icon(Icons.notification_add_rounded)
-          ],
-        ),
-        backgroundColor: Colors.red,
-        ),
-        body: Container(
-          height:500,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(23),
-            color: Colors.blue,
-           )
-        ),
-        bottomNavigationBar: BottomAppBar(
-          color: Colors.red,
-        ),
+        backgroundColor: Colors.blue,
+        title: Row(children: [FlutterLogo(size: 45)]),
+      ),
+      drawer: Drawer(),
+      body: ListView(
+        scrollDirection: Axis.vertical,
+        children: <Widget>[
+          Image.asset('assets/photo1.jpg'),
+          Image.asset('assets/photo2.jpg'),
+          Image.asset('assets/photo3.jpg'),
+          Image.asset('assets/photo4.jpg'),
+          Image.asset('assets/photo5.jpg'),
+        ],
+      ),
     );
   }
 }
